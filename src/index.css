@@ -182,18 +182,15 @@
     animation: none;
     stroke-dashoffset: 400;
   }
-svg {
-/*   width: 1200px;
-  height: 250px; */
-}
-svg text {
-  stroke: #20b2a6;
-  stroke-width: 1;
-  fill: transparent;
-  stroke-dasharray: 450;
-  stroke-dashoffset: 450;
-  animation: draw 4s forwards;
-}
+  
+  .bg-text-radial {
+    background-image: radial-gradient(
+      circle, #fff 25px, var(--color-primary) 55px 
+    );
+    color: transparent;
+    background-clip: text;
+  }
+
   @keyframes draw {
     70% {
       fill: transparent;

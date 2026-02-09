@@ -74,7 +74,7 @@ const Hero = () => {
           <div className="space-y">
             <h1 className="text-5xl md:text-6xl lg:text-7xl font-bold leading-tight animate-fade-in animation-delay-100">
               Crafting 
-              <span className="text-primary glow-text">
+              <span className="bg-text-radial text-primary glow-text">
                 Digital 
               </span>
               <br />
