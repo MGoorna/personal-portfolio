@@ -54,6 +54,11 @@
     backdrop-filter: blur(24px);
     border: 1px solid color-mix(in srgb, var(--color-border) 60%, transparent);
   }
+  .glass-bg {
+    background-color: var(--background);
+    backdrop-filter: blur(24px);
+
+  }
   .glow-text {
     text-shadow: 0 0 30px color-mix(in srgb, var(--color-primary)50%, transparent);
   }
@@ -201,4 +206,66 @@
     }
   }
 
+  .view-toggle-btn {
+    @apply px-4 py-2 border border-(--border)/50 rounded-lg font-semibold transition-all duration-200;
+    @apply bg-(--card)/50 text-(--muted-foreground) backdrop-blur-xl;
+  }
+
+  .view-toggle-btn:hover {
+    @apply bg-(--card) text-(--foreground) border-(--border);
+  }
+
+  .view-toggle-btn.active {
+    @apply bg-(--primary) text-(--primary-foreground) border-transparent;
+    box-shadow: 0 4px 15px hsl(195 53% 79% / 0.3);
+  }
+
+  .dropdown-trigger {
+    @apply flex items-center justify-between gap-3 px-4 py-3 min-w-45;
+    @apply bg-(--card)/60 backdrop-blur-xl   rounded-xl;
+    @apply text-(--foreground) font-medium transition-all duration-200 cursor-pointer;
+  }
+
+  .dropdown-trigger:hover {
+    @apply bg-(--card);
+  }
+
+  .dropdown-trigger:focus {
+    @apply outline-none ring-2 ring-(--primary)/50;
+  }
+
+  .dropdown-menu {
+    @apply absolute top-full left-0 mt-2 min-w-full z-50;
+    @apply bg-(--card)/95 backdrop-blur-xl border  rounded-xl;
+    @apply shadow-2xl overflow-hidden;
+  }
+
+  .dropdown-item {
+    @apply px-4 py-3 text-(--foreground)/80 font-medium transition-colors duration-150 cursor-pointer;
+  }
+
+  .dropdown-item:hover {
+    @apply bg-(--primary)/10 text-(--foreground);
+  }
+
+  .dropdown-item.active {
+    @apply text-(--primary) border-(--primary)/50;
+  }
+
+   .header-glass {
+    @apply bg-(--card)/80 backdrop-blur-2xl border-b border-(--border)/30;
+    box-shadow: 0 8px 32px hsl(220 20% 2% / 0.4);
+  }
+
+  .search-input-custom {
+    @apply w-full px-12 py-3 bg-(--card)/50 backdrop-blur-xl;
+    @apply rounded-full;
+    @apply text-(--foreground) placeholder:text-(--muted-foreground);
+    @apply transition-all duration-200;
+  }
+
+  .search-input-custom:focus {
+    @apply outline-none border-(--primary)/50 bg-(--card)/70;
+    box-shadow: 0 0 0 3px hsl(195 53% 79% / 0.15);
+  }
 }

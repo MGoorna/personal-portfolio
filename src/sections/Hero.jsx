@@ -29,13 +29,25 @@ const Hero = () => {
       left: `${Math.random() * 100}%`,
     }))
   );
-  const handleDownload = () => {
-    console.log('Download CV');
-    const link = document.createElement('a');
-    link.href = '/CV.pdf';
-    link.download = 'MyCV.pdf';
-    link.click();
+
+  const handleDownload = async () => {
+    try {
+      const res = await fetch('/CV_Magdalena_Gorna.pdf');
+      if (!res.ok) throw new Error('Failed to fetch CV');
+      const blob = await res.blob();
+      const url = window.URL.createObjectURL(blob);
+      const link = document.createElement('a');
+      link.href = url;
+      link.download = 'CV_Magdalena_Gorna.pdf';
+      document.body.appendChild(link);
+      link.click();
+      link.remove();
+      window.URL.revokeObjectURL(url);
+    } catch (err) {
+      console.error('Download CV failed', err);
+    }
   };
+
   return (
     <section className='relative min-h-screen flex items-center overflow-hidden'>
       <div className='absolute inset-0'>

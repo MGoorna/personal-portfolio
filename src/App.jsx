@@ -1,29 +1,21 @@
-import Navbar from "@/layout/Navbar"
-import Hero from "@/sections/Hero"
-import About from "@/sections/About"
-import Projects from "./sections/Projects"
-import Experience from "@/sections/Experience"
-import Testimonials from "@/sections/Testimonials"
-import Contact from "@/sections/Contact"
-import { Analytics } from '@vercel/analytics/react'
 
+import { Routes, Route, BrowserRouter } from "react-router"
+import Portfolio from './pages/Portfolio.jsx'
+import NotFound from './pages/NotFound.jsx'
+import Home from './pages/Home.jsx'
+import Projects from "./pages/Projects.js"
 
 function App() {
 
-
   return (
-    <div className="min-h-screen overflow-x-hidden">
-      <Navbar />
-      <main>
-        <Hero />
-        <About />
-        <Projects />
-        <Experience />
-        <Testimonials />
-        <Contact />
-      </main>
-      <Analytics />
-    </div>
+    <BrowserRouter>
+      <Routes>
+        <Route path="/" element={<Home/>} />
+        <Route path="/portfolio" element={<Portfolio/>} />
+        <Route path="/projects" element={<Projects/>} />
+        <Route path="*" element={<NotFound />} />
+      </Routes>
+    </BrowserRouter>
   )
 }
 
