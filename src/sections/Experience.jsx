@@ -1,5 +1,12 @@
 
 const experiences = [
+    {
+    period: '05.2026 - present',
+    title: 'Software Engineer',
+    description: 'Focused on developing end-to-end web solutions using VB.NET, ASP.NET Web Forms, and Bootstrap for responsive interfaces. Hands-on experience with MS SQL database design, T-SQL optimization, and building secure REST APIs. Proven ability to analyze logs, trace issues, and profile performance to resolve production environment errors efficiently.',
+    technologies: [".NET", "ASP.NET Web Forms", "REST API", "MS SQL", "Bootstrap" ],
+    current: true,
+  },
   {
     period: '2024 - present',
     title: 'Junior Data Scientist',
